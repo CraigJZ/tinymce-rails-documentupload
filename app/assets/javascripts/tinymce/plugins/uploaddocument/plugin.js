@@ -99,6 +99,10 @@
           return handleError('You must choose a file');
         }
 
+        if(getInputValue("alt") == "") {
+          return handleError('You must enter a description');
+        }
+
         throbber = new top.tinymce.ui.Throbber(win.getEl());
         throbber.show();
 
@@ -147,7 +151,7 @@
             } else {
               console.log("Error");
             }
-            
+
             ed.windowManager.close();
           }
         } catch(e) {
@@ -201,7 +205,7 @@
         	if (thumb_json["height"]) {
           	docstr += " height='" + thumb_json["height"] + "'";
 					}
-	
+
 					if (thumb_json["width"]) {
           	docstr += " width='" + thumb_json["width"] + "'";
 					}
